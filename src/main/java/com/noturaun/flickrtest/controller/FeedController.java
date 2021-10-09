@@ -1,15 +1,14 @@
-package com.noturaun.flickertest.controller;
+package com.noturaun.flickrtest.controller;
 
 
-import com.noturaun.flickertest.entity.Feed;
-import com.noturaun.flickertest.service.FeedService;
+import com.noturaun.flickrtest.entity.Feed;
+import com.noturaun.flickrtest.service.FeedService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
 @RequestMapping("/feeds")
 public class FeedController {
 
@@ -24,7 +23,7 @@ public class FeedController {
     }
 
     @GetMapping
-    public ResponseEntity<Feed> getFeedObj(@RequestParam(required = false) String tags){
-        return feedService.getFeedObj(tags);
+    public ResponseEntity<Feed> getFeed(@RequestParam(required = false) String tags){
+        return feedService.getFeed(tags);
     }
 }

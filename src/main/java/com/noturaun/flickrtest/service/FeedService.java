@@ -1,23 +1,15 @@
-package com.noturaun.flickertest.service;
+package com.noturaun.flickrtest.service;
 
 
-import com.noturaun.flickertest.entity.Feed;
-import com.noturaun.flickertest.entity.Photo;
+import com.noturaun.flickrtest.entity.Feed;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
-import org.springframework.http.converter.HttpMessageConverter;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.client.RestTemplate;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
 
 @Service
 public class FeedService {
@@ -25,20 +17,26 @@ public class FeedService {
 
     @Value(value = "${base.url}")
     String baseUrl;
-    String format = "format=json&nojsoncallback=1";
+    @Value(value = "${format}")
+    String format;
+    @Value(value = "${nojsoncallback}")
+    String nojsoncallback;
 
     @Autowired
     private RestTemplate restTemplate;
 
     public ResponseEntity<String> getFeedString(String tags){
-        String url = String.format(baseUrl,tags,format);
+        String url = String.format(baseUrl,tags,format,nojsoncallback);
         ResponseEntity<String> response = restTemplate.getForEntity(url,String.class);
+        log.info(response.toString());
+
         return response;
     }
 
-    public ResponseEntity<Feed> getFeedObj(String tags){
-        String url = String.format(baseUrl,tags,format);
+    public ResponseEntity<Feed> getFeed(String tags){
+        String url = String.format(baseUrl,tags,format,nojsoncallback);
         Feed feed = restTemplate.getForObject(url, Feed.class);
+        log.info(feed.toString());
 
         return ResponseEntity.ok(feed);
     }

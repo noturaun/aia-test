@@ -1,15 +1,13 @@
-package com.noturaun.flickertest.entity;
+package com.noturaun.flickrtest.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.*;
-
-import java.util.List;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 @NoArgsConstructor
 @AllArgsConstructor
-public class Photo {
+public class Item {
     String title;
     String link;
     Media media;

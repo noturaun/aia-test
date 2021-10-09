@@ -1,4 +1,4 @@
-package com.noturaun.flickertest.entity;
+package com.noturaun.flickrtest.entity;
 
 
 import lombok.Data;

@@ -1,4 +1,4 @@
-package com.noturaun.flickertest.dto;
+package com.noturaun.flickrtest.dto;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,4 +1,4 @@
-package com.noturaun.flickertest;
+package com.noturaun.flickrtest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -11,10 +11,10 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import java.time.Duration;
 
 @SpringBootApplication
-public class FlickertestApplication {
+public class FlickrtestApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(FlickertestApplication.class, args);
+		SpringApplication.run(FlickrtestApplication.class, args);
 	}
 
 	@Bean
@@ -29,7 +29,7 @@ public class FlickertestApplication {
 		return new WebMvcConfigurer() {
 			@Override
 			public void addCorsMappings(CorsRegistry registry) {
-				registry.addMapping("/feeds").allowedOrigins("http://localhost:8080");
+				registry.addMapping("/**");
 			}
 		};
 	}

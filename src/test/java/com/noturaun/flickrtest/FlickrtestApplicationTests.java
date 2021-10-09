@@ -1,11 +1,10 @@
-package com.noturaun.flickertest;
+package com.noturaun.flickrtest;
 
-import com.flickr4java.flickr.photos.Photo;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class FlickertestApplicationTests {
+class FlickrtestApplicationTests {
 
 	@Test
 	void contextLoads() {
