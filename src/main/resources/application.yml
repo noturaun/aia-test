@@ -1,0 +1,23 @@
+server:
+  error:
+    include-stacktrace: always
+
+spring:
+  datasource:
+    url: ${REMOTE_URL}
+    username: ${REMOTE_USERNAME}
+    password: ${REMOTE_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+
+logging:
+  level:
+    org:
+      hibernate:
+        SQL: DEBUG
+        type:
+          descriptor:
+            sql:
+              BasicBinder: TRACE

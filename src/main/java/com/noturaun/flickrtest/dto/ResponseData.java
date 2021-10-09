@@ -8,8 +8,9 @@ import java.util.List;
 
 @Getter
 @Setter
-public class ResponseData<T> {
+public class ResponseData<T, M> {
     private boolean status;
     private List<String> messages = new ArrayList<>();
     private T payload;
+    private T[] payloads;
 }

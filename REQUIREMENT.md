@@ -24,10 +24,10 @@
 
 - [x] Grab the everchanging public image list from [Flickr public feed](https://api.flickr.com/services/feeds/photos_public.gne).
    You can check the documentation from this [API Doc](http://www.flickr.com/services/feeds/).
-- [ ] Use a public github repository to put your code. If you don't have one, just make one! Also, make use of good source versioning.
+- [x] Use a public github repository to put your code. If you don't have one, just make one! Also, make use of good source versioning.
    Commit often, and commit meaningfully.
-- [ ] Create the endpoint that will use the data you get from that Flickr public feed API. Like, searching, or paging. Make sure the API Endpoint is not directly using the Flickr      one(use your own API), and make sure it can be consumed from different URL (CORS-safe).
-- [ ] Bonus point if you can save the pulled data from Flickr periodically to your database(be it mysql, noSQL or any other storage) by an API Calling. So, there's one API to save    the data from Flickr, and another API to pull the data, with different parameters.
+- [x] Create the endpoint that will use the data you get from that Flickr public feed API. Like, searching, or paging. Make sure the API Endpoint is not directly using the Flickr      one(use your own API), and make sure it can be consumed from different URL (CORS-safe).
+- [x] Bonus point if you can save the pulled data from Flickr periodically to your database(be it mysql, noSQL or any other storage) by an API Calling. So, there's one API to save    the data from Flickr, and another API to pull the data, with different parameters.
 - [ ] Optional one (only after doing the bonus point) : Create API Endpoint that can pull the specific data (like, specific tags, date, etc), and other that can save the specific      data from Flickr to your database only. Also, it's good if you are able to create one more endpoint to clear all the data pulled.
 - [ ] Expected result is JAR or WAR that can be deployed on Tomcat/JBOSS.
    Deployment is optional. If you can deploy to public/private distribution, the better.
