@@ -4,9 +4,9 @@ server:
 
 spring:
   datasource:
-    url: ${REMOTE_URL}
-    username: ${REMOTE_USERNAME}
-    password: ${REMOTE_PASSWORD}
+    url: ${JDBC_DATABASE_URL}
+    username: ${JDBC_DATABASE_USERNAME}
+    password: ${JDBC_DATABASE_PASSWORD}
   jpa:
     hibernate:
       ddl-auto: update
