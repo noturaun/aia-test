@@ -7,9 +7,7 @@ import com.noturaun.flickrtest.service.FeedService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.Optional;
 
 
@@ -46,7 +44,7 @@ public class FeedController {
                     return feedService.getSavedFeed(sortBy, page, pageSize);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/save")
     public void deleteFeed(){
         feedService.deleteFeedData();
     }

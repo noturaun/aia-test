@@ -2,7 +2,9 @@ package com.noturaun.flickrtest;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.client.RestTemplateBuilder;
+import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
@@ -17,12 +19,14 @@ public class FlickrtestApplication {
 		SpringApplication.run(FlickrtestApplication.class, args);
 	}
 
+//	@Override
+//	protected SpringApplicationBuilder configure(SpringApplicationBuilder builder) {
+//		return builder.sources(FlickrtestApplication.class);
+//	}
+
 	@Bean
-	public RestTemplate restTemplate(RestTemplateBuilder restTemplateBuilder){
-		return restTemplateBuilder
-				.setConnectTimeout(Duration.ofMillis(10000))
-				.setReadTimeout(Duration.ofMillis(5000))
-				.build();
+	public RestTemplate restTemplate() {
+		return new RestTemplate();
 	}
 	@Bean
 	public WebMvcConfigurer corsConfigurer() {
